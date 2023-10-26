@@ -43,7 +43,14 @@ def encode_password(password):
 
 
 def decode_password(encoded_password):
-    pass
+    decoded_password = ""
+    for i in encoded_password:
+        n = int(i)
+        n -= 3
+        if n < 0:
+            n+=10
+        decoded_password += str(n)
+        return decoded_password
 
 
 if __name__ == "__main__":
